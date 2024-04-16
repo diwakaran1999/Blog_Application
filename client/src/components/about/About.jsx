@@ -1,9 +1,8 @@
 
-import { Box, styled, Typography, Link } from '@mui/material';
-import { GitHub, Instagram, Email } from '@mui/icons-material';
+import { Box, styled, Typography} from '@mui/material';
 
 const Banner = styled(Box)`
-    background-image: url(https://www.wallpapertip.com/wmimgs/23-236943_us-wallpaper-for-website.jpg);
+    background-image: url(https://hyperhci.com/wp-content/uploads/2020/02/hyperhci-tech-blog-wallpaper-1.jpg);
     width: 100%;
     height: 50vh;
     background-position: left 0px bottom 0px;
@@ -27,25 +26,8 @@ const About = () => {
         <Box>
             <Banner/>
             <Wrapper>
-                <Typography variant="h3">Code for Interview</Typography>
-                <Text variant="h5">I'm a Software Engineer based in India. 
-                    I've built websites, desktop applications and corporate software.<br />
-                    If you are interested, you can view some of my favorite projects here
-                    <Box component="span" style={{ marginLeft: 5 }}>
-                        <Link href="https://github.com/kunaltyagi9" color="inherit" target="_blank"><GitHub /></Link>
-                    </Box>
-                </Text>
-                <Text variant="h5">
-                    Need something built or simply want to have chat? Reach out to me on
-                    <Box component="span" style={{ marginLeft: 5 }}>
-                        <Link href="https://www.instagram.com/codeforinterview/" color="inherit" target="_blank">
-                            <Instagram />
-                        </Link>
-                    </Box>  
-                        or send me an Email 
-                        <Link href="mailto:codeforinterview@gmail.com?Subject=This is a subject" target="_blank" color="inherit">
-                            <Email />
-                        </Link>.
+                <Typography variant="h3">This is a Blog Application using MERN</Typography>
+                <Text variant="h5"> It is a Capstone Project.<br />
                 </Text>
             </Wrapper>
         </Box>

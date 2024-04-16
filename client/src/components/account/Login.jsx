@@ -13,7 +13,7 @@ const Component = styled(Box)`
 `;
 
 const Image = styled('img')({
-    width: 100,
+    width: 200,
     display: 'flex',
     margin: 'auto',
     padding: '50px 0 0'
@@ -80,7 +80,7 @@ const Login = ({ isUserAuthenticated }) => {
     const navigate = useNavigate();
     const { setAccount } = useContext(DataContext);
 
-    const imageURL = 'https://www.sesta.it/wp-content/uploads/2021/03/logo-blog-sesta-trasparente.png';
+    const imageURL = 'https://img.freepik.com/premium-vector/word-concept-color-geometric-shapes-blog_205544-12899.jpg';
 
     useEffect(() => {
         showError(false);
