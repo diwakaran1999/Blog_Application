@@ -56,7 +56,7 @@ const Author = styled(Box)(({ theme }) => ({
 
 const DetailView = () => {
     const url = 'https://images.unsplash.com/photo-1543128639-4cb7e6eeef1b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bGFwdG9wJTIwc2V0dXB8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80';
-    
+
     const [post, setPost] = useState({});
     const { account } = useContext(DataContext);
 
@@ -71,11 +71,16 @@ const DetailView = () => {
             }
         }
         fetchData();
-    }, []);
+    }, [id]); // Added id to the dependency array
 
-    const deleteBlog = async () => {  
-        await API.deletePost(post._id);
-        navigate('/')
+
+    const deleteBlog = async () => {
+        try {
+            await API.deletePost(post._id);
+            navigate('/');
+        } catch (error) {
+            console.error('Error deleting post:', error);
+        }
     }
 
     return (
@@ -86,7 +91,7 @@ const DetailView = () => {
                     account.username === post.username && 
                     <>  
                         <Link to={`/update/${post._id}`}><EditIcon color="primary" /></Link>
-                        <DeleteIcon onClick={() => deleteBlog()} color="error" />
+                        <DeleteIcon onClick={deleteBlog} color="error" />
                     </>
                 }
             </Box>
